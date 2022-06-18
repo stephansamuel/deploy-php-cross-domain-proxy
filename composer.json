@@ -1,0 +1,16 @@
+{
+    "name": "stephansamuel/deploy-php-cross-domain-proxy",
+    "description": "Deployment wrapper for PHP CORS Proxy",
+    "license": "GPL-3.0",
+    "minimum-stability": "dev",
+    "authors": [
+        {
+            "name": "Stephan Samuel",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "softius/cors-proxy": "1.0.x-dev"
+    }
+}

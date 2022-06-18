@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+
+  deploy:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./:/opt/src
+
+  util:
+    image: composer:2.3
+    volumes:
+      - ./:/opt/src
+    entrypoint: [ "bash" ]
