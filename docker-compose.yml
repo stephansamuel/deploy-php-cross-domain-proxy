@@ -7,10 +7,12 @@ services:
       context: .
       dockerfile: Dockerfile
     volumes:
-      - ./:/opt/src
+      - ./:/app
 
   util:
-    image: composer:2.3
+    build:
+      context: .
+      dockerfile: Dockerfile
     volumes:
-      - ./:/opt/src
+      - ./:/app
     entrypoint: [ "bash" ]

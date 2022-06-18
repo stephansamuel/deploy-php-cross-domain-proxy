@@ -1,0 +1,7 @@
+{
+    "deployTarget": "/var/www/html",
+    "validUrls": [
+        "http://api.temp-mail.org",
+        "https://translate.googleapis.com"
+    ]
+}
