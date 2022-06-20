@@ -40,7 +40,7 @@ The following steps occur when the deploy process is kicked off:
 1. Read the `deployTarget` variable and create a link in the current directory to the target.
 1. Update the source project from GitHub using Composer.
 1. Read the configuration JSON file and modify the correct variable in `proxy.php` file to contain the necessary information. 
-1. Run `composer install` to generate the optimized autoloader.
+1. Run `composer install` to generate the [optimized](https://getcomposer.org/doc/articles/autoloader-optimization.md) autoloader. More [here](https://stackoverflow.com/questions/21721495/how-to-deploy-correctly-when-using-composers-develop-production-switch).
 1. Copy the necessary output files to the target.
 
 ## Credits
