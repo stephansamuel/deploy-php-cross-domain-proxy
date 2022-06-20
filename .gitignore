@@ -1,2 +1,2 @@
-/vendor/
-proxy.config
+vendor/
+config.json
