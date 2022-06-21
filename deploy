@@ -1,2 +1,4 @@
 #!/bin/sh
 
+docker-compose up --build --remove-orphans deploy
+mv work/index.php $(<work/deploy.target)

@@ -1,2 +1,7 @@
-vendor/
+work/
+work/vendor/
+!work/composer.json
+!work/composer.lock
+!work/config.json
+
 config.json

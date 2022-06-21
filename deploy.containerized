@@ -1,13 +1,17 @@
 #!/bin/bash
 
-function readConfigJson {
-    VALUE=`grep -m 1 "\"${1}\"" config.json | sed -r 's/^ *//;s/.*: *"//;s/",?//'`
+#VERBOSE=1
 
-    if [ ! "$VALUE" ]; then
-        echo "Cannot find \"${1}\" in config.json" >&2;
-        exit 1;
-    else
-        echo $VALUE ;
-    fi;
-}
+#while getopts q: opt
+#do
+#    case "$opt" in
+#        q) VERBOSE=0
+#    esac
+#done
 
+cd work
+composer update
+cd ..
+cat config.json | jq .validUrls[] | awk '{print "    "$0","}' > work/url-list.inc
+awk '//; /\$valid_requests = /{ while ( getline < "work/url-list.inc" ) { print} }' work/vendor/softius/cors-proxy/proxy.php > work/index.php
+cat config.json | jq -r .deployTarget > work/deploy.target
